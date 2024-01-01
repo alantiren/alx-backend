@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-"""Hypermedia pagination sample.
+"""
+Module with hypermedia pagination methods for a database of popular baby names.
 """
 import csv
 import math
@@ -7,7 +8,16 @@ from typing import Dict, List, Tuple
 
 
 def index_range(page: int, page_size: int) -> Tuple[int, int]:
-    """Retrieves the index range from a given page and page size.
+    """
+    Return a tuple of the start and end index for pagination.
+    
+    Arguments:
+        - page: An integer representing the current page (1-indexed).
+        - page_size: An integer representing the number of items per page.
+    
+    Returns:
+        A tuple containing the start index and end index for the given page
+        and page_size.
     """
     start = (page - 1) * page_size
     end = start + page_size
@@ -36,7 +46,15 @@ class Server:
         return self.__dataset
 
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
-        """Retrieves a page of data.
+        """
+        Return a paginated dataset based on the provided page and page_size.
+
+        Arguments:
+            - page: An integer representing the current page (1-indexed).
+            - page_size: An integer representing the number of items per page.
+
+        Returns:
+            A list of rows representing the paginated dataset.
         """
         assert type(page) == int and type(page_size) == int
         assert page > 0 and page_size > 0
@@ -47,7 +65,16 @@ class Server:
         return data[start:end]
 
     def get_hyper(self, page: int = 1, page_size: int = 10) -> Dict:
-        """Retrieves information about a page.
+        """
+        Return hypermedia pagination information for the given page and
+        page_size.
+
+        Arguments:
+            - page: An integer representing the current page (1-indexed).
+            - page_size: An integer representing the number of items per page.
+
+        Returns:
+            A dictionary containing hypermedia pagination information.
         """
         page_data = self.get_page(page, page_size)
         start, end = index_range(page, page_size)

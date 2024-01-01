@@ -39,8 +39,17 @@ class Server:
         return self.__indexed_dataset
 
     def get_hyper_index(self, index: int = None, page_size: int = 10) -> Dict:
-        """Retrieves info about a page from a given index and with a
-        specified size.
+        """
+        Return hypermedia pagination information for the given index and
+        page_size.
+
+        Arguments:
+            - index: An integer representing the current start
+            index of the return page.
+            - page_size: An integer representing the number of items per page.
+
+        Returns:
+            A dictionary containing hypermedia pagination information.
         """
         data = self.indexed_dataset()
         assert index is not None and index >= 0 and index <= max(data.keys())
