@@ -42,12 +42,10 @@ class Server:
         """
         Return hypermedia pagination information for the given index and
         page_size.
-
         Arguments:
             - index: An integer representing the current start
             index of the return page.
             - page_size: An integer representing the number of items per page.
-
         Returns:
             A dictionary containing hypermedia pagination information.
         """

@@ -48,11 +48,9 @@ class Server:
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
         """
         Return a paginated dataset based on the provided page and page_size.
-
         Arguments:
             - page: An integer representing the current page (1-indexed).
             - page_size: An integer representing the number of items per page.
-
         Returns:
             A list of rows representing the paginated dataset.
         """
@@ -68,11 +66,9 @@ class Server:
         """
         Return hypermedia pagination information for the given page and
         page_size.
-
         Arguments:
             - page: An integer representing the current page (1-indexed).
             - page_size: An integer representing the number of items per page.
-
         Returns:
             A dictionary containing hypermedia pagination information.
         """

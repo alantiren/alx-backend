@@ -9,11 +9,9 @@ from typing import List, Tuple
 def index_range(page: int, page_size: int) -> Tuple[int, int]:
     """
     Return a tuple of the start and end index for pagination.
-    
     Arguments:
         - page: An integer representing the current page (1-indexed).
         - page_size: An integer representing the number of items per page.
-    
     Returns:
         A tuple containing the start index and end index for the given page
         and page_size.
@@ -47,11 +45,9 @@ class Server:
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
         """
         Return a paginated dataset based on the provided page and page_size.
-
         Arguments:
             - page: An integer representing the current page (1-indexed).
             - page_size: An integer representing the number of items per page.
-
         Returns:
             A list of rows representing the paginated dataset.
         """
